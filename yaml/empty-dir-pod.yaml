@@ -8,14 +8,14 @@ spec:
     image: ubuntu:14.04
     command: ["tail", "-f", "/dev/null"]
     volumeMounts:
-      - mountPath: /data1
-        name: my-empty-volume
+      - name: my-empty-volume
+        mountPath: /data1
 
   - name: nginx-container
     image: nginx
     volumeMounts:
-      - mountPath: /data2
-        name: my-empty-volume
+      - name: my-empty-volume
+        mountPath: /data2
 
   volumes:
     - name: my-empty-volume
