@@ -8,13 +8,14 @@ spec:
       image: redis
       volumeMounts:
         - name: shared-storage
-          mountPath: /data/shared
-                                - name: nginx
-                                    image: nginx
-                                        volumeMounts:
-                                            - name: shared-storage
-                                                  mountPath: /data/shared
-                                                      
-                                                        volumes:
-                                                          - name : shared-storage
-                                                              emptyDir: {}
+          mountPath: /data/shared1
+
+    - name: nginx
+      image: nginx
+      volumeMounts:
+        - name: shared-storage
+          mountPath: /data/shared2
+
+  volumes:
+    - name : shared-storage
+      emptyDir: {}
