@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: Pod
 metadata:
-  name: 
+  name: host-path-test
 spec:
   containers:
   - name: ubuntu-container
