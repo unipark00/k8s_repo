@@ -1,0 +1,22 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: 
+spec:
+  containers:
+  - name: ubuntu-container
+    image: ubuntu:14.04
+    command: ["tail", "-f", "/dev/null"]
+    volumeMounts:
+      - name: my-empty-volume
+        mountPath: /data1
+
+  - name: nginx-container
+    image: nginx
+    volumeMounts:
+      - name: my-empty-volume
+        mountPath: /data2
+
+  volumes:
+    - name: my-empty-volume
+      emptyDir: {}
