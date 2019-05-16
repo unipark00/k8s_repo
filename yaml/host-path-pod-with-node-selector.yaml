@@ -16,6 +16,9 @@ spec:
         - name: shared-vm-storage
           mountPath: /data/shared2
 
+  nodeSelector:
+    disktype: ssd
+
   volumes:
     - name : shared-vm-storage
       hostPath:
