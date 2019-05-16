@@ -4,19 +4,21 @@ metadata:
   name: host-path-test
 spec:
   containers:
-  - name: ubuntu-container
-    image: ubuntu:14.04
-    command: ["tail", "-f", "/dev/null"]
-    volumeMounts:
-      - name: my-empty-volume
-        mountPath: /data1
+    - name: redis
+      image: redis
+      volumeMounts:
+        - name: shared-vm-storage
+          mountPath: /data/shared1
 
-  - name: nginx-container
-    image: nginx
-    volumeMounts:
-      - name: my-empty-volume
-        mountPath: /data2
+    - name: nginx
+      image: nginx
+      volumeMounts:
+        - name: shared-vm-storage
+          mountPath: /data/shared2
 
   volumes:
-    - name: my-empty-volume
-      emptyDir: {}
+    - name : shared-vm-storage
+      hostPath:
+        path: /tmp
+        type: Directory
+        
