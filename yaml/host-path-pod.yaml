@@ -21,4 +21,3 @@ spec:
       hostPath:
         path: /tmp
         type: Directory
-        
