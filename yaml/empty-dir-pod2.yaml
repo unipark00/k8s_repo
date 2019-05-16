@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: Pod
 metadata:
-  name: shared-volumes
+  name: shared-volumes-empty-dir
 spec:
   containers:
     - name: redis
