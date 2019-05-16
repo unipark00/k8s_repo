@@ -6,5 +6,6 @@
 
 ### commands
 ```console
-kubectl get pods -o=custom-columns=NAME:.metadata.name,CONTAINERS:.spec.containers[*].name,HOST_IP:.status.hostIP,POD_IP:.status.podIP
+kubectl get pods -o=custom-columns=NAME:.metadata.name,CONTAINERS:.spec.containers[*].name, \
+        HOST_IP:.status.hostIP,POD_IP:.status.podIP
 ```
