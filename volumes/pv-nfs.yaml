@@ -16,6 +16,6 @@ spec:
     - hard
     - nfsvers=4.1
   nfs:
-    path: /home/nfs
     server: 172.31.0.20
+    path: /home/nfs
     readOnly: false

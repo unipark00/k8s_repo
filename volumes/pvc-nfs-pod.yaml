@@ -7,8 +7,8 @@ spec:
     - name: myfrontend
       image: nginx
       volumeMounts:
-        - name: pvc-vol
-          mountPath: "/var/www/html"
+        - mountPath: "/var/www/html"
+          name: pvc-vol
   volumes:
     - name: pvc-vol
       persistentVolumeClaim:
