@@ -20,7 +20,7 @@ spec:
     disktype: ssd
 
   volumes:
-    - name : shared-vm-storage
+    - name: shared-vm-storage
       hostPath:
         path: /tmp
         type: Directory

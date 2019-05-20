@@ -1,22 +1,21 @@
 apiVersion: v1
 kind: Pod
 metadata:
-  name: test-pod
+  name: empty-dir-pod
 spec:
   containers:
-  - name: ubuntu-container
-    image: ubuntu:14.04
-    command: ["tail", "-f", "/dev/null"]
-    volumeMounts:
-      - name: my-empty-volume
-        mountPath: /data1
+    - name: redis
+      image: redis
+      volumeMounts:
+        - name: my-empty-dir
+          mountPath: /data/shared1
 
-  - name: nginx-container
-    image: nginx
-    volumeMounts:
-      - name: my-empty-volume
-        mountPath: /data2
+    - name: nginx
+      image: nginx
+      volumeMounts:
+        - name: my-empty-dir
+          mountPath: /data/shared2
 
   volumes:
-    - name: my-empty-volume
+    - name: my-empty-dir
       emptyDir: {}
